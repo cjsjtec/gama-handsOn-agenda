@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html ng-app="listaTelefonica">
+<head>
+	<meta charset="UTf-8">
+	<title>Lista Telefonuca</title>
+	<link rel="stylesheet" type="text/css" href="libs/materialize/css/materialize.min.css">
+	<script src="libs/angular/angular.js"></script>
+	<script src="libs/angular/ngMask.min.js"></script>
+	<script type="text/javascript" src="libs/jquery/jquery-3.1.1.min.js"></script>
+	<script type="text/javascript" src="libs/materialize/js/materialize.min.js"></script>
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+<body ng-controller="ctrlApp">
+	<h4>Contatos   <a ng-click="mostrarFormContato()" class="btn-floating btn-large waves-effect waves-light green" style="float:right;"><i class="material-icons ">add</i></a></h4>
+	<ul class="collection" id="lista_contato" ng-show="listar == true">
+		<li class="collection-header" style="margin-right:15px;padding-bottom:15px;"></li>
+		<li class="collection-item avatar" ng-repeat="contato in contatos">
+			<img src="libs/image/contato.png" class="circle">
+			<span class="title">{{contato.nome}}</span>
+			<p>{{contato.telefone}}
+			 <a ng-click="editar(contato)" class="btn-floating red" style="float:right;"><i class="large material-icons">mode_edit</i></a><br>
+			 cjsj.tec@gmail.com
+			</p>			
+		</li>	
+	</ul>
+	
+	<div class="row" ng-show="listar == false">
+		<form class="col s12">
+			<div class="row">
+				<div class="input-field cols12">
+				  <input name="nome" id="nome" type="text" class="validate" ng-model="contato.nome">
+				  <label for="nome">Nome</label>
+				</div>
+			</div>
+			<div class="row">
+				<div class="input-field cols12">
+				  <input type="text" name="telefone" id="telefone" mask="(99) 9?9999-9999" ng-model="contato.telefone">
+				  <label for="telefone">Telefone</label>
+				</div>
+			</div>
+			<div class="row">
+				<div class="input-field col s12">
+				  <input id="email" name="email" type="email" class="validate" ng-model="contato.email">
+				  <label for="email">Email</label>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col s4 offset-s4">
+					<a class="waves-effect waves-light btn" ng-click="gravar(contato)">Adicionar Contato</a>
+					<a class="waves-effect waves-light btn" ng-click="cancelar()">Cancelar</a>
+				</div>
+			</div>
+		</form>
+	</div>
+  <script type="text/javascript" src="/libs/project/index.js"> </script>
+
+</body>
+</html>
