@@ -39,7 +39,7 @@
 			
 			$scope.editar = function(contato) {
 				$scope.listar = false;
-				$scope.contatoForm = contato;				
+				$scope.contatoForm = angular.copy(contato);
 			}
 		}
 	}
