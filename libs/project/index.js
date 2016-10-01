@@ -37,9 +37,9 @@
 				$scope.listar = true;
 			}
 			
-			$scope.editar = function(contato) {				
+			$scope.editar = function(contato) {
 				$scope.listar = false;
-				$scope.contato = contato;				
+				$scope.contatoForm = contato;				
 			}
 		}
 	}
